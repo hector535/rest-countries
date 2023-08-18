@@ -1,0 +1,15 @@
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --bg-elements-color: hsl(0, 0%, 100%);
+  --bg-page-color: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --placeholder-input-color: hsl(0, 0%, 52%);
+}
+
+[data-theme="dark"] {
+  --bg-elements-color: hsl(209, 23%, 22%);
+  --bg-page-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --placeholder-input-color: hsl(0, 0%, 100%);
+}
