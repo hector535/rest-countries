@@ -1,16 +1,13 @@
+import { Outlet } from "react-router-dom";
 import { Header } from "../Header/Header";
 
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-export const Layout = (props: LayoutProps) => {
-  const { children } = props;
-
+export const Layout = () => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 };
