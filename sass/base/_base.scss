@@ -1,5 +1,9 @@
 @use "../abstracts/" as *;
 
+body {
+  background: var(--bg-page-color);
+}
+
 :is(a, button, input, textarea, select, details, summary) {
   &:focus-visible {
     outline: hsl(243, 87%, 12%) dotted 0.19rem;
