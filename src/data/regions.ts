@@ -1,4 +1,4 @@
-export const data = [
+export const regions = [
   {
     value: 1,
     name: "Africa",
