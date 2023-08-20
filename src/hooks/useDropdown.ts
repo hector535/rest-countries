@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DropdownProps } from "../types/dropdown";
 
 export const useDropdown = (props: DropdownProps) => {
-  const { selectedValue, options, onSelectOption } = props;
+  const { selectedValue, options, className, onSelectOption } = props;
 
   const [showOptions, setShowOptions] = useState(false);
 
@@ -15,6 +15,7 @@ export const useDropdown = (props: DropdownProps) => {
   };
 
   return {
+    className,
     showOptions,
     options,
     selectedOption,
