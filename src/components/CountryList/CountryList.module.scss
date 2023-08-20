@@ -1,0 +1,8 @@
+.country_list {
+  margin-top: 2rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 16.5rem);
+  column-gap: clamp(1rem, 4.5vw, 4.65rem);
+  row-gap: 2.5rem;
+}
