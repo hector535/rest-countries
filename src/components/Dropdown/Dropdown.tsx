@@ -2,10 +2,13 @@ import { Icon } from "../Icon/Icon";
 import { useCloseElement } from "../../hooks/useCloseElement";
 import { useDropdown } from "../../hooks/useDropdown";
 import { DropdownProps } from "../../types/dropdown";
+import clsx from "clsx";
+
 import style from "./Dropdown.module.scss";
 
 export const Dropdown = (props: DropdownProps) => {
   const {
+    className,
     showOptions,
     options,
     selectedOption,
@@ -26,7 +29,7 @@ export const Dropdown = (props: DropdownProps) => {
       onKeyDown={(e) =>
         handleKeyDown(e, () => setShowOptions((prevState) => !prevState))
       }
-      className={style.dropdown}
+      className={clsx(className, style.dropdown)}
       ref={dropdownRef}
     >
       <p>{selectedOption ? selectedOption.name : "Select an option"}</p>
