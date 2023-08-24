@@ -1,0 +1,42 @@
+.loading_spinner {
+  border-style: solid;
+  border-color: var(--bg-spinner-color);
+  border-top-color: var(--spinner-color); /* Black */
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &--small {
+    border-width: 2px;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  &--medium {
+    border-width: 4px;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &--large {
+    border-width: 6px;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &--xLarge {
+    border-width: 14px;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
