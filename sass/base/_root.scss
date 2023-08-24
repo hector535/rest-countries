@@ -5,6 +5,13 @@
   --bg-page-color: hsl(0, 0%, 98%);
   --text-color: hsl(200, 15%, 8%);
   --placeholder-input-color: hsl(0, 0%, 52%);
+
+  --header-height: 5rem;
+
+  --bg-spinner-color: hsl(0, 0%, 95%);
+  --spinner-color: hsl(0, 2%, 22%);
+
+  --outline-color: hsl(243, 87%, 12%);
 }
 
 [data-theme="dark"] {
@@ -12,4 +19,9 @@
   --bg-page-color: hsl(207, 26%, 17%);
   --text-color: hsl(0, 0%, 100%);
   --placeholder-input-color: hsl(0, 0%, 100%);
+
+  --bg-spinner-color: hsl(0, 2%, 22%);
+  --spinner-color: hsl(0, 0%, 90%);
+
+  --outline-color: hsl(0, 0%, 90%);
 }

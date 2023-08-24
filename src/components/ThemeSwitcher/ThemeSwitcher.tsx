@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Icon } from "../Icon/Icon";
-
+import { Mode } from "./types";
 import style from "./ThemeSwitcher.module.scss";
 
-type Mode = "light" | "dark";
-
 const getModeFromLocalStorage = (): Mode => {
-  return (localStorage.getItem("dark-theme") as Mode) || "light";
+  return (localStorage.getItem("theme") as Mode) || "light";
 };
 
 export const ThemeSwitcher = () => {
@@ -18,7 +16,7 @@ export const ThemeSwitcher = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", mode);
-    localStorage.setItem("dark-theme", mode);
+    localStorage.setItem("theme", mode);
   }, [mode]);
 
   const handleThemeSwitcherClick = () => {

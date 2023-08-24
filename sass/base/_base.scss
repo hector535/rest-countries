@@ -4,9 +4,9 @@ body {
   background: var(--bg-page-color);
 }
 
-:is(a, button, input, textarea, select, details, summary) {
+:is(a, button, input, textarea, select, details, summary, div) {
   &:focus-visible {
-    outline: hsl(243, 87%, 12%) dotted 0.19rem;
+    outline: var(--outline-color) dotted 0.19rem;
     outline-offset: 0.19rem;
   }
 }

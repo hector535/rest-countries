@@ -1,18 +1,20 @@
 .header {
   background: var(--bg-elements-color);
-
   color: var(--text-color);
+
   font-size: 0.875rem;
   font-weight: 800;
 
   box-shadow: 0px 2px 4px 0px hsla(0, 0%, 0%, 0.05);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-  height: 5rem;
+  height: var(--header-height);
+  width: min(90%, 80rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(90%, 80rem);
   margin-inline: auto;
 }

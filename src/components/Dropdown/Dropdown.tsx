@@ -1,9 +1,8 @@
+import clsx from "clsx";
 import { Icon } from "../Icon/Icon";
 import { useCloseElement } from "../../hooks/useCloseElement";
-import { useDropdown } from "../../hooks/useDropdown";
-import { DropdownProps } from "../../types/dropdown";
-import clsx from "clsx";
-
+import { useDropdown } from "./useDropdown";
+import { DropdownProps } from "./types";
 import style from "./Dropdown.module.scss";
 
 export const Dropdown = (props: DropdownProps) => {
