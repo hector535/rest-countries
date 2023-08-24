@@ -1,0 +1,55 @@
+.page {
+  width: min(90%, 80rem);
+  height: calc(100vh - var(--header-height));
+
+  display: grid;
+  grid-auto-rows: auto 1fr;
+  gap: 2rem;
+
+  margin-inline: auto;
+  padding-block: 1.5rem;
+
+  > div:nth-child(2) {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--bg-elements-color);
+      transition: background-color 0.3s ease;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--text-color);
+      border-radius: 20px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 2.5rem;
+}
+
+.search {
+  flex-grow: 1;
+  max-width: 25rem;
+}
+
+.virtuoso_grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 16.5rem);
+  column-gap: clamp(1rem, 4.5vw, 4.65rem);
+  row-gap: 2.5rem;
+  align-content: start;
+}

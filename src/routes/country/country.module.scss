@@ -1,0 +1,95 @@
+@use "../../../sass/abstracts/" as *;
+
+.page {
+  width: min(90%, 80rem);
+  margin-inline: auto;
+
+  padding-block: clamp(2.5rem, 5.56vw, 5rem);
+
+  display: grid;
+  gap: clamp(2.5rem, 5.56vw, 5rem);
+
+  > button {
+    justify-self: start;
+  }
+}
+
+.main_content {
+  display: grid;
+  gap: clamp(2.5rem, calc(10vw - 1.5rem), 9rem);
+  justify-items: center;
+
+  @include breakpoint(768px) {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+  }
+
+  > picture {
+    > img {
+      border-radius: 6px;
+      width: clamp(320px, 40vw, 560px);
+    }
+  }
+}
+
+.text_content {
+  color: var(--text-color);
+
+  transition: color 0.3s ease;
+
+  @include breakpoint(768px) {
+    align-self: center;
+  }
+
+  > h2 {
+    font-weight: 800;
+    font-size: clamp(1.375rem, 4vw, 2rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+}
+
+.primary_text {
+  display: grid;
+  gap: clamp(2rem, 4.5vw, 4rem);
+  margin-bottom: clamp(2rem, 4.9vw, 4.375rem);
+
+  @include breakpoint(768px) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  > div {
+    display: grid;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.secondary_text {
+  display: grid;
+  gap: 1rem;
+
+  @include breakpoint(768px) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  > h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
