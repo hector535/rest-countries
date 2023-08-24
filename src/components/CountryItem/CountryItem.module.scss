@@ -1,0 +1,44 @@
+.country_item {
+  width: 16.5rem;
+  height: 21rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px 2px hsla(0, 0%, 0%, 0.05);
+
+  background-color: var(--bg-elements-color);
+  color: var(--text-color);
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.flag {
+  width: 100%;
+  border-bottom: 1px solid silver;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.625rem;
+  margin-bottom: 1rem;
+}
+
+.details {
+  display: grid;
+  gap: 0.5rem;
+  line-height: 1rem;
+}
+
+.information {
+  font-weight: 300;
+
+  span {
+    font-weight: 600;
+  }
+}
