@@ -1,8 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQueryClient } from "react-query";
 import { VirtuosoGrid } from "react-virtuoso";
-import { Dropdown } from "../../components/Dropdown/Dropdown";
+import Select, { SelectInstance } from "react-select";
 import { SearchInput } from "../../components/SearchInput/SearchInput";
 import { CountryItem } from "../../components/CountryItem/CountryItem";
 import { LoadingView } from "../../components/LoadingView/LoadingView";
@@ -10,7 +10,15 @@ import { ErrorView } from "../../components/ErrorView/ErrorView";
 import { useQueryCountries } from "./useQueryCountries";
 import { countryQuery } from "../country/countryQuery";
 import { regions } from "../../data/regions";
+import { Option } from "../../types/select";
+import { selectStyles } from "./selectStyles";
 import style from "./countries.module.scss";
+
+const createOption = (region: string | null = ""): Option => {
+  if (!region) return {} as Option;
+
+  return { label: region, value: region };
+};
 
 const Countries = () => {
   const navigate = useNavigate();
@@ -21,10 +29,12 @@ const Countries = () => {
   const regionParam = searchParams.get("region");
 
   const [country, setCountry] = useState<string>(countryParam ?? "");
-  const [region, setRegion] = useState<string>(regionParam ?? "");
+  const [region, setRegion] = useState<Option>(createOption(regionParam));
 
   const { countries, isLoading, isSuccess, isError, error, refetch } =
-    useQueryCountries(region?.toLowerCase());
+    useQueryCountries(region.value?.toLowerCase());
+
+  const selectRef = useRef<SelectInstance<Option>>(null);
 
   const filteredCountries = useMemo(
     () => countries.filter((c) => c.name.toLowerCase().includes(country)),
@@ -36,9 +46,17 @@ const Countries = () => {
     navigate(`/countries/${officialName}`);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case "Enter":
+        selectRef.current!.onMenuOpen();
+        break;
+    }
+  };
+
   useEffect(() => {
-    navigate(`?region=${region}&country=${country}`);
-  }, [country, region]);
+    navigate(`?region=${region.value}&country=${country}`);
+  }, [country, region, navigate]);
 
   return (
     <main className={style.page}>
@@ -52,11 +70,16 @@ const Countries = () => {
           value={country}
         />
 
-        <Dropdown
-          className={style.dropdown}
+        <Select
+          ref={selectRef}
+          name="region"
+          placeholder="Filter by Region"
+          styles={selectStyles}
           options={regions}
-          onSelectOption={setRegion}
-          selectedValue={region}
+          value={region}
+          isSearchable={false}
+          onKeyDown={handleKeyDown}
+          onChange={(opt) => setRegion(opt!)}
         />
       </div>
 
