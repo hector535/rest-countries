@@ -1,22 +1,22 @@
 export const regions = [
   {
     value: "Africa",
-    name: "Africa",
+    label: "Africa",
   },
   {
     value: "America",
-    name: "America",
+    label: "America",
   },
   {
     value: "Asia",
-    name: "Asia",
+    label: "Asia",
   },
   {
     value: "Europe",
-    name: "Europe",
+    label: "Europe",
   },
   {
     value: "Oceania",
-    name: "Oceania",
+    label: "Oceania",
   },
 ];
