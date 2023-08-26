@@ -1,13 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
-import { Tag } from "../../components/Tag/Tag";
 import { Icon } from "../../components/Icon/Icon";
 import { useQueryCountry } from "./useQueryCountry";
 import style from "./country.module.scss";
 
 const Country = () => {
-  const { name } = useParams();
-  const { country } = useQueryCountry(name);
+  const { code } = useParams();
+  const { country } = useQueryCountry(code);
   const navigate = useNavigate();
 
   return (
@@ -79,8 +78,12 @@ const Country = () => {
             <div className={style.secondary_text}>
               <h3>Border Countries:</h3>
               <div className={style.tags}>
-                {country.borders?.map((b) => (
-                  <Tag key={b}>{b}</Tag>
+                {country.borders?.map((code) => (
+                  <Button
+                    key={code}
+                    onClick={() => navigate(`/countries/${code}`)}
+                    text={code}
+                  />
                 ))}
               </div>
             </div>

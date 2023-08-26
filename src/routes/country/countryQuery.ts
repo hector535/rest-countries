@@ -1,6 +1,6 @@
-import { getCountry } from "../../api/countries";
+import { getCountryByCode } from "../../api/countries";
 
-export const countryQuery = (name: string = "") => ({
-  queryKey: ["countries", name],
-  queryFn: () => getCountry(name),
+export const countryQuery = (code: string = "") => ({
+  queryKey: ["countries", code],
+  queryFn: () => getCountryByCode(code),
 });

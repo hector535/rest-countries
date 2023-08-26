@@ -40,9 +40,9 @@ const Countries = () => {
     [countries, country]
   );
 
-  const handleCountryClick = async (officialName: string) => {
-    queryClient.prefetchQuery(countryQuery(officialName));
-    navigate(`/countries/${officialName}`);
+  const handleSelectCountry = async (code: string) => {
+    queryClient.prefetchQuery(countryQuery(code));
+    navigate(`/countries/${code}`);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -90,6 +90,7 @@ const Countries = () => {
 
       {isSuccess && !!filteredCountries.length && (
         <VirtuosoGrid
+          tabIndex={1}
           listClassName={style.virtuoso_grid}
           totalCount={filteredCountries.length}
           overscan={50}
@@ -97,7 +98,7 @@ const Countries = () => {
             <CountryItem
               key={filteredCountries[index].name}
               country={filteredCountries[index]}
-              onClick={handleCountryClick}
+              onSelect={handleSelectCountry}
             />
           )}
         ></VirtuosoGrid>

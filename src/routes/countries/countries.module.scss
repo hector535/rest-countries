@@ -52,4 +52,11 @@
   column-gap: clamp(1rem, 4.5vw, 4rem);
   row-gap: 2.5rem;
   align-content: start;
+
+  //To fix showing cards issues
+  margin-block: 0.5rem;
+
+  > div:last-child {
+    margin-bottom: 0.5rem;
+  }
 }

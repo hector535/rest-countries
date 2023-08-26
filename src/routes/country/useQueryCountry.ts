@@ -2,8 +2,8 @@ import { useQuery } from "react-query";
 import { countryQuery } from "./countryQuery";
 import { Country } from "../../types/country";
 
-export const useQueryCountry = (name: string = "") => {
-  const { data, ...rest } = useQuery({ ...countryQuery(name), suspense: true });
+export const useQueryCountry = (code: string = "") => {
+  const { data, ...rest } = useQuery({ ...countryQuery(code), suspense: true });
 
   return { country: data ?? ({} as Country), ...rest };
 };
