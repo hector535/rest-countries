@@ -5,6 +5,7 @@ export const toCountry = (c: ICountry): Country => {
   return {
     name: c.name.common,
     officialName: c.name.official,
+    cca3: c.cca3,
     population: c.population,
     region: c.region,
     subregion: c.subregion,
