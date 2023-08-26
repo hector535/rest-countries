@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  gap: 1.25rem;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+
+  transition: color 0.3s ease;
+}
