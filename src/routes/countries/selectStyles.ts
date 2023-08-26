@@ -9,6 +9,10 @@ export const selectStyles = {
     cursor: `pointer`,
     backgroundColor: `var(--bg-elements-color)`,
   }),
+  placeholder: (baseStyle: CSSObjectWithLabel) => ({
+    ...baseStyle,
+    color: `var(--text-color)`,
+  }),
   singleValue: (baseStyle: CSSObjectWithLabel) => ({
     ...baseStyle,
     color: `var(--text-color)`,

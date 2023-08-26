@@ -49,7 +49,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 16.5rem);
-  column-gap: clamp(1rem, 4.5vw, 4.65rem);
+  column-gap: clamp(1rem, 4.5vw, 4rem);
   row-gap: 2.5rem;
   align-content: start;
 }

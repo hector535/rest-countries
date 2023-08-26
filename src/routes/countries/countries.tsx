@@ -7,37 +7,36 @@ import { SearchInput } from "../../components/SearchInput/SearchInput";
 import { CountryItem } from "../../components/CountryItem/CountryItem";
 import { LoadingView } from "../../components/LoadingView/LoadingView";
 import { ErrorView } from "../../components/ErrorView/ErrorView";
+import { NoResultsMessage } from "../../components/NoResultsMessage/NoResultsMessage";
 import { useQueryCountries } from "./useQueryCountries";
 import { countryQuery } from "../country/countryQuery";
 import { regions } from "../../data/regions";
 import { Option } from "../../types/select";
 import { selectStyles } from "./selectStyles";
+import { initSelect } from "./utils";
 import style from "./countries.module.scss";
-
-const createOption = (region: string | null = ""): Option => {
-  if (!region) return {} as Option;
-
-  return { label: region, value: region };
-};
 
 const Countries = () => {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const queryClient = useQueryClient();
 
   const countryParam = searchParams.get("country");
   const regionParam = searchParams.get("region");
 
-  const [country, setCountry] = useState<string>(countryParam ?? "");
-  const [region, setRegion] = useState<Option>(createOption(regionParam));
+  const [country, setCountry] = useState(countryParam ?? "");
+  const [region, setRegion] = useState(initSelect(regions, regionParam ?? ""));
 
   const { countries, isLoading, isSuccess, isError, error, refetch } =
-    useQueryCountries(region.value?.toLowerCase());
+    useQueryCountries(region.value.toLowerCase());
 
   const selectRef = useRef<SelectInstance<Option>>(null);
 
   const filteredCountries = useMemo(
-    () => countries.filter((c) => c.name.toLowerCase().includes(country)),
+    () =>
+      countries.filter((c) =>
+        c.name.toLowerCase().includes(country.toLowerCase())
+      ),
     [countries, country]
   );
 
@@ -55,8 +54,8 @@ const Countries = () => {
   };
 
   useEffect(() => {
-    navigate(`?region=${region.value}&country=${country}`);
-  }, [country, region, navigate]);
+    setSearchParams({ region: region.label, country });
+  }, [country, region, setSearchParams]);
 
   return (
     <main className={style.page}>
@@ -76,7 +75,7 @@ const Countries = () => {
           placeholder="Filter by Region"
           styles={selectStyles}
           options={regions}
-          value={region}
+          value={region.value ? region : undefined}
           isSearchable={false}
           onKeyDown={handleKeyDown}
           onChange={(opt) => setRegion(opt!)}
@@ -87,7 +86,9 @@ const Countries = () => {
 
       {isError && <ErrorView error={error} resetErrorBoundary={refetch} />}
 
-      {isSuccess && (
+      {isSuccess && !filteredCountries.length && <NoResultsMessage />}
+
+      {isSuccess && !!filteredCountries.length && (
         <VirtuosoGrid
           listClassName={style.virtuoso_grid}
           totalCount={filteredCountries.length}
