@@ -77,9 +77,19 @@ Your users should be able to:
 - Vite
 - React.js
 - TypeScript
-- React-Router-DOM
+- React-Router
 - React-Query
 - SASS Modules
+
+#### Test Runner
+
+- Vitest
+
+### Running it locally
+
+You must have [Node.js](https://nodejs.org/en) installed on your computer before you can run the project locally in your machine
+
+Once Node.js is installed, you can proceed to clone the project:
 
 ### Useful resources
 
