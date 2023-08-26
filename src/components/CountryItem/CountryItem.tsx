@@ -2,14 +2,19 @@ import { CountryItemProps } from "./types";
 import style from "./CountryItem.module.scss";
 
 export const CountryItem = (props: CountryItemProps) => {
-  const { country, onClick } = props;
-  const { name, officialName, capital, flag, population, region } = country;
+  const { country, onSelect } = props;
+  const { name, cca3, capital, flag, population, region } = country;
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.code === "Enter" || e.code === "Space") onSelect(cca3);
+  };
 
   return (
     <div
       className={style.country_item}
       tabIndex={0}
-      onClick={() => onClick(officialName)}
+      onClick={() => onSelect(cca3)}
+      onKeyDown={handleKeyDown}
     >
       <img
         className={style.flag}
