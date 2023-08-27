@@ -10,7 +10,7 @@
     <br />
     <a href="https://rest-countries-finder-adb11a.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/hector535/product-feedback-app/issues" target="_blank">Report Bug</a>
+    <a href="https://github.com/hector535/rest-countries/issues" target="_blank">Report Bug</a>
     <br />
     <br />
   </p>
@@ -67,7 +67,6 @@ Your users should be able to:
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 - View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
 - Bonus: Toggle the color scheme between light and dark mode
 
 ## My process
