@@ -109,7 +109,7 @@ And finally, install the project's dependencies:
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in development mode.
 
