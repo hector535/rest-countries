@@ -17,4 +17,9 @@
   align-items: center;
   justify-content: space-between;
   margin-inline: auto;
+
+  > a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
 }
