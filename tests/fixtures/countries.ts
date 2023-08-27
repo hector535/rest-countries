@@ -1,43 +1,319 @@
 export const countries = [
   {
     flags: {
-      png: "https://flagcdn.com/w320/de.png",
-      svg: "https://flagcdn.com/de.svg",
-      alt: "The flag of Germany is composed of three equal horizontal bands of black, red and gold.",
+      png: "https://flagcdn.com/w320/za.png",
+      svg: "https://flagcdn.com/za.svg",
+      alt: "The flag of South Africa is composed of two equal horizontal bands of red and blue, with a yellow-edged black isosceles triangle superimposed on the hoist side of the field. This triangle has its base centered on the hoist end, spans about two-fifth the width and two-third the height of the field, and is enclosed on its sides by the arms of a white-edged green horizontally oriented Y-shaped band which extends along the boundary of the red and blue bands to the fly end of the field.",
     },
     name: {
-      common: "Germany",
-      official: "Federal Republic of Germany",
+      common: "South Africa",
+      official: "Republic of South Africa",
       nativeName: {
-        deu: {
-          official: "Bundesrepublik Deutschland",
-          common: "Deutschland",
+        afr: {
+          official: "Republiek van Suid-Afrika",
+          common: "South Africa",
+        },
+        eng: {
+          official: "Republic of South Africa",
+          common: "South Africa",
+        },
+        nbl: {
+          official: "IRiphabliki yeSewula Afrika",
+          common: "Sewula Afrika",
+        },
+        nso: {
+          official: "Rephaboliki ya Afrika-Borwa ",
+          common: "Afrika-Borwa",
+        },
+        sot: {
+          official: "Rephaboliki ya Afrika Borwa",
+          common: "Afrika Borwa",
+        },
+        ssw: {
+          official: "IRiphabhulikhi yeNingizimu Afrika",
+          common: "Ningizimu Afrika",
+        },
+        tsn: {
+          official: "Rephaboliki ya Aforika Borwa",
+          common: "Aforika Borwa",
+        },
+        tso: {
+          official: "Riphabliki ra Afrika Dzonga",
+          common: "Afrika Dzonga",
+        },
+        ven: {
+          official: "Riphabuḽiki ya Afurika Tshipembe",
+          common: "Afurika Tshipembe",
+        },
+        xho: {
+          official: "IRiphabliki yaseMzantsi Afrika",
+          common: "Mzantsi Afrika",
+        },
+        zul: {
+          official: "IRiphabliki yaseNingizimu Afrika",
+          common: "Ningizimu Afrika",
         },
       },
     },
-    capital: ["Berlin"],
-    region: "Europe",
-    population: 83240525,
+    cca3: "ZAF",
+    capital: ["Pretoria", "Bloemfontein", "Cape Town"],
+    region: "Africa",
+    population: 59308690,
   },
   {
     flags: {
-      png: "https://flagcdn.com/w320/um.png",
-      svg: "https://flagcdn.com/um.svg",
+      png: "https://flagcdn.com/w320/sj.png",
+      svg: "https://flagcdn.com/sj.svg",
       alt: "",
     },
     name: {
-      common: "United States Minor Outlying Islands",
-      official: "United States Minor Outlying Islands",
+      common: "Svalbard and Jan Mayen",
+      official: "Svalbard og Jan Mayen",
       nativeName: {
-        eng: {
-          official: "United States Minor Outlying Islands",
-          common: "United States Minor Outlying Islands",
+        nor: {
+          official: "Svalbard og Jan Mayen",
+          common: "Svalbard og Jan Mayen",
         },
       },
     },
-    capital: ["Washington DC"],
+    cca3: "SJM",
+    capital: ["Longyearbyen"],
+    region: "Europe",
+    population: 2562,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/ws.png",
+      svg: "https://flagcdn.com/ws.svg",
+      alt: "The flag of Samoa has a red field. A blue rectangle, bearing a representation of the Southern Cross made up of five large and one smaller five-pointed white stars, is superimposed in the canton.",
+    },
+    name: {
+      common: "Samoa",
+      official: "Independent State of Samoa",
+      nativeName: {
+        eng: {
+          official: "Independent State of Samoa",
+          common: "Samoa",
+        },
+        smo: {
+          official: "Malo Saʻoloto Tutoʻatasi o Sāmoa",
+          common: "Sāmoa",
+        },
+      },
+    },
+    cca3: "WSM",
+    capital: ["Apia"],
+    region: "Oceania",
+    population: 198410,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/gm.png",
+      svg: "https://flagcdn.com/gm.svg",
+      alt: "The flag of Gambia is composed of three equal horizontal bands of red, blue with white top and bottom edges, and green.",
+    },
+    name: {
+      common: "Gambia",
+      official: "Republic of the Gambia",
+      nativeName: {
+        eng: {
+          official: "Republic of the Gambia",
+          common: "Gambia",
+        },
+      },
+    },
+    cca3: "GMB",
+    capital: ["Banjul"],
+    region: "Africa",
+    population: 2416664,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/kn.png",
+      svg: "https://flagcdn.com/kn.svg",
+      alt: "The flag of Saint Kitts and Nevis features two large five-pointed white stars within a yellow-edged black diagonal band that extends from the lower hoist-side corner to the upper fly-side corner of the field. Above and beneath this band are a green and red triangle respectively.",
+    },
+    name: {
+      common: "Saint Kitts and Nevis",
+      official: "Federation of Saint Christopher and Nevis",
+      nativeName: {
+        eng: {
+          official: "Federation of Saint Christopher and Nevis",
+          common: "Saint Kitts and Nevis",
+        },
+      },
+    },
+    cca3: "KNA",
+    capital: ["Basseterre"],
     region: "Americas",
-    population: 300,
+    population: 53192,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/mc.png",
+      svg: "https://flagcdn.com/mc.svg",
+      alt: "The flag of Monaco is composed of two equal horizontal bands of red and white.",
+    },
+    name: {
+      common: "Monaco",
+      official: "Principality of Monaco",
+      nativeName: {
+        fra: {
+          official: "Principauté de Monaco",
+          common: "Monaco",
+        },
+      },
+    },
+    cca3: "MCO",
+    capital: ["Monaco"],
+    region: "Europe",
+    population: 39244,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/aw.png",
+      svg: "https://flagcdn.com/aw.svg",
+      alt: "",
+    },
+    name: {
+      common: "Aruba",
+      official: "Aruba",
+      nativeName: {
+        nld: {
+          official: "Aruba",
+          common: "Aruba",
+        },
+        pap: {
+          official: "Aruba",
+          common: "Aruba",
+        },
+      },
+    },
+    cca3: "ABW",
+    capital: ["Oranjestad"],
+    region: "Americas",
+    population: 106766,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/gw.png",
+      svg: "https://flagcdn.com/gw.svg",
+      alt: "The flag of Guinea-Bissau features a red vertical band on its hoist side that takes up about two-fifth the width of the field, and two equal horizontal bands of yellow and green adjoining the vertical band. A five-pointed black star is centered in the vertical band.",
+    },
+    name: {
+      common: "Guinea-Bissau",
+      official: "Republic of Guinea-Bissau",
+      nativeName: {
+        por: {
+          official: "República da Guiné-Bissau",
+          common: "Guiné-Bissau",
+        },
+        pov: {
+          official: "República da Guiné-Bissau",
+          common: "Guiné-Bissau",
+        },
+      },
+    },
+    cca3: "GNB",
+    capital: ["Bissau"],
+    region: "Africa",
+    population: 1967998,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/kp.png",
+      svg: "https://flagcdn.com/kp.svg",
+      alt: "The flag of North Korea is composed of three horizontal bands — a large central white-edged red band, and a blue band above and beneath the red band. On the hoist side of the red band is a red five-pointed star within a white circle.",
+    },
+    name: {
+      common: "North Korea",
+      official: "Democratic People's Republic of Korea",
+      nativeName: {
+        kor: {
+          official: "조선민주주의인민공화국",
+          common: "조선",
+        },
+      },
+    },
+    cca3: "PRK",
+    capital: ["Pyongyang"],
+    region: "Asia",
+    population: 25778815,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/py.png",
+      svg: "https://flagcdn.com/py.svg",
+      alt: "The flag of Paraguay features three equal horizontal bands of red, white and blue, with an emblem centered in the white band. On the obverse side of the flag depicted, this emblem is the national coat of arms.",
+    },
+    name: {
+      common: "Paraguay",
+      official: "Republic of Paraguay",
+      nativeName: {
+        grn: {
+          official: "Tetã Paraguái",
+          common: "Paraguái",
+        },
+        spa: {
+          official: "República de Paraguay",
+          common: "Paraguay",
+        },
+      },
+    },
+    cca3: "PRY",
+    capital: ["Asunción"],
+    region: "Americas",
+    population: 7132530,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/bm.png",
+      svg: "https://flagcdn.com/bm.svg",
+      alt: "",
+    },
+    name: {
+      common: "Bermuda",
+      official: "Bermuda",
+      nativeName: {
+        eng: {
+          official: "Bermuda",
+          common: "Bermuda",
+        },
+      },
+    },
+    cca3: "BMU",
+    capital: ["Hamilton"],
+    region: "Americas",
+    population: 63903,
+  },
+  {
+    flags: {
+      png: "https://flagcdn.com/w320/cg.png",
+      svg: "https://flagcdn.com/cg.svg",
+      alt: "The flag of the Republic of the Congo features a yellow diagonal band that extends from the lower hoist-side corner to the upper fly-side corner of the field. Above and beneath this band are a green and red triangle respectively.",
+    },
+    name: {
+      common: "Republic of the Congo",
+      official: "Republic of the Congo",
+      nativeName: {
+        fra: {
+          official: "République du Congo",
+          common: "République du Congo",
+        },
+        kon: {
+          official: "Repubilika ya Kongo",
+          common: "Repubilika ya Kongo",
+        },
+        lin: {
+          official: "Republíki ya Kongó",
+          common: "Republíki ya Kongó",
+        },
+      },
+    },
+    cca3: "COG",
+    capital: ["Brazzaville"],
+    region: "Africa",
+    population: 5657000,
   },
   {
     flags: {
@@ -55,112 +331,9 @@ export const countries = [
         },
       },
     },
+    cca3: "VIR",
     capital: ["Charlotte Amalie"],
     region: "Americas",
     population: 106290,
-  },
-  {
-    flags: {
-      png: "https://flagcdn.com/w320/ae.png",
-      svg: "https://flagcdn.com/ae.svg",
-      alt: "The flag of United Arab Emirates features a red vertical band on its hoist side that takes up about one-fourth the width of the field and three equal horizontal bands of green, white and black adjoining the vertical band.",
-    },
-    name: {
-      common: "United Arab Emirates",
-      official: "United Arab Emirates",
-      nativeName: {
-        ara: {
-          official: "الإمارات العربية المتحدة",
-          common: "دولة الإمارات العربية المتحدة",
-        },
-      },
-    },
-    capital: ["Abu Dhabi"],
-    region: "Asia",
-    population: 9890400,
-  },
-  {
-    flags: {
-      png: "https://flagcdn.com/w320/tz.png",
-      svg: "https://flagcdn.com/tz.svg",
-      alt: "The flag of Tanzania features a yellow-edged black diagonal band that extends from the lower hoist-side corner to the upper fly-side corner of the field. Above and beneath this band are a green and light blue triangle respectively.",
-    },
-    name: {
-      common: "Tanzania",
-      official: "United Republic of Tanzania",
-      nativeName: {
-        eng: {
-          official: "United Republic of Tanzania",
-          common: "Tanzania",
-        },
-        swa: {
-          official: "Jamhuri ya Muungano wa Tanzania",
-          common: "Tanzania",
-        },
-      },
-    },
-    capital: ["Dodoma"],
-    region: "Africa",
-    population: 59734213,
-  },
-  {
-    flags: {
-      png: "https://flagcdn.com/w320/mx.png",
-      svg: "https://flagcdn.com/mx.svg",
-      alt: "The flag of Mexico is composed of three equal vertical bands of green, white and red, with the national coat of arms centered in the white band.",
-    },
-    name: {
-      common: "Mexico",
-      official: "United Mexican States",
-      nativeName: {
-        spa: {
-          official: "Estados Unidos Mexicanos",
-          common: "México",
-        },
-      },
-    },
-    capital: ["Mexico City"],
-    region: "Americas",
-    population: 128932753,
-  },
-  {
-    flags: {
-      png: "https://flagcdn.com/w320/us.png",
-      svg: "https://flagcdn.com/us.svg",
-      alt: "The flag of the United States of America is composed of thirteen equal horizontal bands of red alternating with white. A blue rectangle, bearing fifty small five-pointed white stars arranged in nine rows where rows of six stars alternate with rows of five stars, is superimposed in the canton.",
-    },
-    name: {
-      common: "United States",
-      official: "United States of America",
-      nativeName: {
-        eng: {
-          official: "United States of America",
-          common: "United States",
-        },
-      },
-    },
-    capital: ["Washington, D.C."],
-    region: "Americas",
-    population: 329484123,
-  },
-  {
-    flags: {
-      png: "https://flagcdn.com/w320/gb.png",
-      svg: "https://flagcdn.com/gb.svg",
-      alt: "The flag of the United Kingdom — the Union Jack — has a blue field. It features the white-edged red cross of Saint George superimposed on the diagonal red cross of Saint Patrick which is superimposed on the diagonal white cross of Saint Andrew.",
-    },
-    name: {
-      common: "United Kingdom",
-      official: "United Kingdom of Great Britain and Northern Ireland",
-      nativeName: {
-        eng: {
-          official: "United Kingdom of Great Britain and Northern Ireland",
-          common: "United Kingdom",
-        },
-      },
-    },
-    capital: ["London"],
-    region: "Europe",
-    population: 67215293,
   },
 ];

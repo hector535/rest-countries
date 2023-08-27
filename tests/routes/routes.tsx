@@ -8,7 +8,7 @@ export const routes = [
     element: <Countries />,
   },
   {
-    path: "/countries/:name",
+    path: "/countries/:code",
     element: <Country />,
   },
 ];

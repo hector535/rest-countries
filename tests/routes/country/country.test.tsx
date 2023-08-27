@@ -1,28 +1,30 @@
 import React, { Suspense } from "react";
-import { QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { createFetchResponse } from "../../utils";
 import { countries } from "../../fixtures/countries";
-import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import { routes } from "../routes";
-import { queryClient } from "../queryClient";
 
 describe("<Country />", () => {
   const mockedFetch = vi.fn();
 
   global.fetch = mockedFetch;
 
-  mockedFetch.mockResolvedValue(createFetchResponse(countries));
+  mockedFetch.mockResolvedValue(createFetchResponse(countries[0]));
+
+  const firstElementCCA3 = countries[0].cca3;
+  const firstElementName = countries[0].name.common;
 
   it("should display a loading message when the component mounts the first time", () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/countries/germany"],
+      initialEntries: ["/countries/MKD"],
     });
 
     render(
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         <Suspense fallback={<h1>Loading...</h1>}>
           <RouterProvider router={router} />
         </Suspense>
@@ -34,11 +36,11 @@ describe("<Country />", () => {
 
   it("should display details about the country specified in the URL", async () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/countries/germany"],
+      initialEntries: [`/countries/${firstElementCCA3}`],
     });
 
     render(
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         <Suspense fallback={<h1>Loading...</h1>}>
           <RouterProvider router={router} />
         </Suspense>
@@ -49,18 +51,20 @@ describe("<Country />", () => {
       expect(screen.queryByText(/loading/i)).not.toBeInTheDocument()
     );
 
-    expect(screen.getAllByText(/germany/i).length).toBeGreaterThan(0);
+    expect(
+      screen.getAllByText(new RegExp(firstElementName, "i")).length
+    ).toBeGreaterThan(0);
   });
 
   it("should navigate back to the main page when the user clicks on the 'back' button", async () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/countries", "/countries/germany"],
+      initialEntries: ["/countries", `/countries/${firstElementCCA3}`],
     });
 
     render(
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={new QueryClient()}>
         <Suspense fallback={<h1>Loading...</h1>}>
           <RouterProvider router={router} />
         </Suspense>
