@@ -54,6 +54,11 @@ const Countries = () => {
   };
 
   useEffect(() => {
+    const input = document.querySelector("[role='combobox']");
+    input?.setAttribute("aria-labelledby", "placeholder");
+  }, []);
+
+  useEffect(() => {
     setSearchParams({ region: region.label, country });
   }, [country, region, setSearchParams]);
 
@@ -63,7 +68,7 @@ const Countries = () => {
         <SearchInput
           className={style.search}
           autoFocus
-          name="q"
+          name="country-name"
           placeholder="Search for a country..."
           onChange={(e) => setCountry(e.target.value)}
           value={country}
@@ -71,7 +76,8 @@ const Countries = () => {
 
         <Select
           ref={selectRef}
-          name="region"
+          aria-label="country-region"
+          name="country-region"
           placeholder="Filter by Region"
           styles={selectStyles}
           options={regions}
