@@ -41,7 +41,7 @@ This is a solution to the [REST Countries API with color theme switcher](https:/
 
 <h2 align="center">Links</h2>
 
-- Solution URL: [REST Countries API | React + TypeScript + React Query + React Router | Frontend Mentor](---------)
+- Solution URL: [REST Countries API | React + TypeScript + React Query + React Router | Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-react-typescript-react-query-react-router-CpKf1nq3lh)
 - Live Site URL: [https://rest-countries-finder-adb11a.netlify.app/](https://rest-countries-finder-adb11a.netlify.app/)
 
 <br>
