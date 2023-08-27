@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  Navigate,
-} from "react-router-dom";
+import { RouterProvider, Navigate, createHashRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Root } from "./routes/root";
 
@@ -23,7 +19,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Root />,
     children: [
