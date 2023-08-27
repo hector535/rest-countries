@@ -12,7 +12,9 @@ export const getAllCountries = async (): Promise<Country[]> => {
   return data.map((c) => toCountry(c));
 };
 
-export const getCountries = async (region: string): Promise<Country[]> => {
+export const getCountriesByRegion = async (
+  region: string
+): Promise<Country[]> => {
   const response = await fetch(
     `https://restcountries.com/v3.1/region/${region}?fields=name,population,region,capital,flags,cca3`
   );
