@@ -1,4 +1,4 @@
-import { Country } from "../../../types/country";
+import { Country } from "@/types";
 import { ICountry } from "./countries.types";
 
 export const toCountry = (c: ICountry): Country => {
