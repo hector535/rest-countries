@@ -4,8 +4,8 @@ import { ReactComponent as ArrowLeft } from "../../assets/arrow-left.svg";
 import { ReactComponent as Moon } from "../../assets/moon.svg";
 import { ReactComponent as Sun } from "../../assets/sun.svg";
 import { ReactComponent as Search } from "../../assets/search.svg";
-import { IconProps } from "./types";
-import style from "./Icon.module.scss";
+import { type IconProps } from "./icon.types";
+import style from "./icon.module.scss";
 
 export const Icon = (props: IconProps) => {
   const { name, className } = props;
